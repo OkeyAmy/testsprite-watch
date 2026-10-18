@@ -78,3 +78,26 @@
 {"ts":"2026-10-18T19:53:35.697Z","type":"watch_label_added","issue":487,"actor":"crypticsaiyan","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/487"}
 {"ts":"2026-10-18T19:53:35.697Z","type":"watch_label_added","issue":485,"actor":"luckyzd","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/485"}
 {"ts":"2026-10-18T19:53:36.316Z","type":"claim_posted","issue":100,"detail":"[Hackathon] Read ~/.testsprite/config for persistent defaults (output, endpoint, project)","url":"https://github.com/TestSprite/testsprite-cli/issues/100"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"my_claim_comment","issue":100,"actor":"OkeyAmy","detail":"/assign","url":"https://github.com/TestSprite/testsprite-cli/issues/100#issuecomment-6254410107"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"claim_confirmed","issue":100,"actor":"testsprite-hob[bot]","detail":"Assigned to @OkeyAmy. Thanks for taking this on. (1 more slot available.) Your open assigned issues (2/3): - TestSprite/testsprite-cli#282 — fix(project): credential/auto-auth file flags bypass the fi…","url":"https://github.com/TestSprite/testsprite-cli/issues/100#issuecomment-6254412403"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"assigned","issue":100,"actor":"OkeyAmy","assignee":"OkeyAmy","url":"https://github.com/TestSprite/testsprite-cli/issues/100"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":529,"actor":"ayush-that","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/529"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":528,"actor":"ayush-that","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/528"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":527,"actor":"ayush-that","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/527"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":526,"actor":"ayush-that","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/526"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":525,"actor":"ayush-that","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/525"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":520,"actor":"kieugiathinhphat","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/520"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":516,"actor":"luckyzd","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/516"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":515,"actor":"luckyzd","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/515"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":505,"actor":"cipoklean","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/505"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":504,"actor":"cipoklean","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/504"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":503,"actor":"lxcario","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/503"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":502,"actor":"lxcario","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/502"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":501,"actor":"lxcario","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/501"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":499,"actor":"Shubhdeep12","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/499"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"closed","issue":493,"actor":"cipoklean","url":"https://github.com/TestSprite/testsprite-cli/issues/493"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":498,"actor":"cipoklean","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/498"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":496,"actor":"Shubhdeep12","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/496"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":495,"actor":"cipoklean","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/495"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":493,"actor":"cipoklean","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/493"}
+{"ts":"2026-10-18T21:13:41.435Z","type":"watch_label_added","issue":492,"actor":"Shubhdeep12","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/492"}
