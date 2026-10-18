@@ -1,0 +1,65 @@
+{
+  "lastRun": "2026-10-18T18:24:09.922Z",
+  "attempts": {
+    "458": {
+      "last": "2026-10-16T23:30:09Z",
+      "count": 1,
+      "result": "rejected"
+    },
+    "459": {
+      "last": "2026-10-16T23:30:55Z",
+      "count": 1,
+      "result": "rejected"
+    },
+    "460": {
+      "last": "2026-10-16T23:31:10Z",
+      "count": 1,
+      "result": "rejected"
+    }
+  },
+  "myClaims": {
+    "282": {
+      "firstSeen": "2026-10-18T18:24:37.746Z"
+    }
+  },
+  "maintainers": {
+    "Davidson3556": false,
+    "mdshzb04": false,
+    "joaorgb15": false,
+    "protonjls": false,
+    "festac-dev": false,
+    "JerryNee": false,
+    "yeziR4": false,
+    "Shubhdeep12": false,
+    "cipoklean": false
+  },
+  "knownTargetKind": {
+    "105": "issue",
+    "377": "issue",
+    "410": "pr",
+    "429": "issue",
+    "430": "issue",
+    "431": "issue",
+    "432": "issue",
+    "447": "pr",
+    "448": "issue",
+    "450": "issue",
+    "451": "pr",
+    "453": "pr",
+    "458": "issue",
+    "459": "issue",
+    "460": "issue",
+    "461": "issue",
+    "492": "issue",
+    "493": "issue",
+    "494": "pr",
+    "496": "issue",
+    "497": "pr",
+    "498": "issue",
+    "499": "issue",
+    "500": "pr",
+    "518": "pr",
+    "521": "pr",
+    "522": "pr"
+  }
+}

@@ -1,0 +1,54 @@
+name: testsprite watch
+
+on:
+  schedule:
+    - cron: '0 7,19 * * *' # 07:00 & 19:00 UTC = 08:00 & 20:00 WAT, twice daily
+  workflow_dispatch:
+    inputs:
+      force_live:
+        description: 'Post /assign comments (otherwise config.json decides)'
+        type: boolean
+        default: false
+      since:
+        description: 'Override window start (ISO8601), empty = resume from state'
+        type: string
+        default: ''
+
+permissions:
+  contents: write # commit state + log back to this repo
+
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run watcher
+        env:
+          GH_TOKEN: ${{ secrets.TS_PAT }}
+          FORCE_LIVE: ${{ inputs.force_live || false }}
+          SINCE: ${{ inputs.since || '' }}
+        run: |
+          node --version
+          ARGS=""
+          if [ "$FORCE_LIVE" = "true" ]; then ARGS="$ARGS --live"; fi
+          if [ -n "$SINCE" ]; then ARGS="$ARGS --since $SINCE"; fi
+          echo "args: [$ARGS]"
+          node scripts/watch.mjs --verbose $ARGS
+
+      - name: Commit state and log
+        run: |
+          git config user.name "testsprite-watch"
+          git config user.email "testsprite-watch@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "no changes"
+          else
+            git commit -m "watch run $(date -u +%FT%TZ)"
+            git push
+          fi

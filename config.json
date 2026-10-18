@@ -1,0 +1,15 @@
+{
+  "repo": "TestSprite/testsprite-cli",
+  "me": "OkeyAmy",
+  "dryRun": true,
+  "slotCap": 3,
+  "maxClaimsPerRun": 2,
+  "claimableLabels": ["accepted", "good first issue", "help wanted"],
+  "watchLabels": ["needs-triage"],
+  "maintainers": ["zeshi-du", "ruili-testsprite", "yunhaoTestSprite"],
+  "attemptCooldownDays": 14,
+  "ttlWarnHours": 72,
+  "initialWindowHours": 48,
+  "maxWindowDays": 7,
+  "commentBody": "/assign"
+}
