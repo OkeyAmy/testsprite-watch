@@ -108,3 +108,11 @@
 {"ts":"2026-10-19T14:17:55.361Z","type":"watch_label_added","issue":527,"actor":"ayush-that","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/527"}
 {"ts":"2026-10-19T14:17:55.361Z","type":"watch_label_added","issue":526,"actor":"ayush-that","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/526"}
 {"ts":"2026-10-19T14:17:55.361Z","type":"watch_label_added","issue":525,"actor":"ayush-that","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/525"}
+{"ts":"2026-10-19T22:46:52.051Z","type":"maintainer_comment","issue":554,"actor":"zeshi-du","detail":"Both fixes are merged: #552 (claims warned at 48 hours and released at 72) and #553 (Season 4 bonus entry checkbox and confirmation bot).","url":"https://github.com/TestSprite/testsprite-cli/issues/554#issuecomment-6277055720"}
+{"ts":"2026-10-19T22:46:52.052Z","type":"closed","issue":554,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/554"}
+{"ts":"2026-10-19T22:46:52.052Z","type":"approval_added","issue":554,"actor":"zeshi-du","label":"accepted","url":"https://github.com/TestSprite/testsprite-cli/issues/554"}
+{"ts":"2026-10-19T22:46:52.052Z","type":"assigned","issue":554,"actor":"zeshi-du","assignee":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/554"}
+{"ts":"2026-10-19T22:46:52.052Z","type":"watch_label_added","issue":539,"actor":"iamfirst","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/539"}
+{"ts":"2026-10-19T22:46:52.052Z","type":"assigned","issue":100,"actor":"OkeyAmy","assignee":"OkeyAmy","url":"https://github.com/TestSprite/testsprite-cli/issues/100"}
+{"ts":"2026-10-19T22:46:52.052Z","type":"watch_label_added","issue":529,"actor":"ayush-that","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/529"}
+{"ts":"2026-10-19T22:46:52.052Z","type":"watch_label_added","issue":528,"actor":"ayush-that","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/528"}
