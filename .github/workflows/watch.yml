@@ -2,7 +2,7 @@ name: testsprite watch
 
 on:
   schedule:
-    - cron: '0 7,19 * * *' # 07:00 & 19:00 UTC = 08:00 & 20:00 WAT, twice daily
+    - cron: '*/5 * * * *' # every 5 minutes — issues get claimed within minutes of acceptance
   workflow_dispatch:
     inputs:
       force_live:

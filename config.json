@@ -1,7 +1,7 @@
 {
   "repo": "TestSprite/testsprite-cli",
   "me": "OkeyAmy",
-  "dryRun": true,
+  "dryRun": false,
   "slotCap": 3,
   "maxClaimsPerRun": 2,
   "claimableLabels": ["accepted", "good first issue", "help wanted"],
