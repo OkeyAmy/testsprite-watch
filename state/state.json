@@ -1,11 +1,50 @@
 {
-  "lastRun": "2026-10-19T22:46:48.664Z",
+  "lastRun": "2026-10-20T12:29:51.346Z",
   "attempts": {
     "100": {
       "first": "2026-10-18T19:53:36.315Z",
       "last": "2026-10-18T19:53:36.315Z",
       "count": 1,
       "result": "confirmed"
+    },
+    "360": {
+      "lastApproval": "2026-10-20T02:37:04Z"
+    },
+    "368": {
+      "lastApproval": "2026-10-20T02:37:10Z"
+    },
+    "373": {
+      "lastApproval": "2026-10-20T02:37:18Z"
+    },
+    "376": {
+      "lastApproval": "2026-10-20T02:37:33Z"
+    },
+    "377": {
+      "lastApproval": "2026-10-20T02:37:40Z"
+    },
+    "387": {
+      "lastApproval": "2026-10-20T02:38:04Z"
+    },
+    "398": {
+      "lastApproval": "2026-10-20T02:38:26Z"
+    },
+    "419": {
+      "lastApproval": "2026-10-20T02:38:52Z"
+    },
+    "428": {
+      "lastApproval": "2026-10-20T02:39:10Z"
+    },
+    "432": {
+      "lastApproval": "2026-10-20T02:39:25Z"
+    },
+    "437": {
+      "lastApproval": "2026-10-20T02:39:42Z"
+    },
+    "448": {
+      "lastApproval": "2026-10-20T02:40:05Z"
+    },
+    "455": {
+      "lastApproval": "2026-10-20T02:40:21Z"
     },
     "458": {
       "last": "2026-10-16T23:30:09Z",
@@ -22,6 +61,63 @@
       "count": 1,
       "result": "rejected"
     },
+    "464": {
+      "lastApproval": "2026-10-20T02:40:49Z"
+    },
+    "467": {
+      "lastApproval": "2026-10-20T02:40:57Z"
+    },
+    "471": {
+      "lastApproval": "2026-10-20T02:41:07Z"
+    },
+    "480": {
+      "lastApproval": "2026-10-20T02:42:21Z"
+    },
+    "481": {
+      "lastApproval": "2026-10-20T02:42:31Z"
+    },
+    "483": {
+      "lastApproval": "2026-10-20T02:42:41Z"
+    },
+    "484": {
+      "lastApproval": "2026-10-20T02:42:50Z"
+    },
+    "485": {
+      "lastApproval": "2026-10-20T02:43:00Z"
+    },
+    "489": {
+      "lastApproval": "2026-10-20T02:43:20Z"
+    },
+    "492": {
+      "lastApproval": "2026-10-20T02:43:40Z"
+    },
+    "498": {
+      "lastApproval": "2026-10-20T02:43:49Z"
+    },
+    "519": {
+      "lastApproval": "2026-10-20T02:44:42Z"
+    },
+    "520": {
+      "lastApproval": "2026-10-20T02:44:49Z"
+    },
+    "533": {
+      "lastApproval": "2026-10-20T02:45:04Z"
+    },
+    "536": {
+      "lastApproval": "2026-10-20T02:45:11Z"
+    },
+    "548": {
+      "lastApproval": "2026-10-20T02:45:18Z"
+    },
+    "549": {
+      "lastApproval": "2026-10-20T02:45:24Z"
+    },
+    "550": {
+      "lastApproval": "2026-10-20T02:45:31Z"
+    },
+    "551": {
+      "lastApproval": "2026-10-20T02:45:38Z"
+    },
     "554": {
       "lastApproval": "2026-10-19T19:32:02Z"
     }
@@ -31,7 +127,7 @@
       "claimedAt": "2026-10-18T19:53:47Z"
     },
     "282": {
-      "firstSeen": "2026-10-19T22:46:52.052Z"
+      "firstSeen": "2026-10-20T12:30:09.739Z"
     }
   },
   "maintainers": {
@@ -49,37 +145,89 @@
     "walter-w-white": false,
     "iamfirst": false,
     "Lexiie": false,
-    "naufalfx805-source": false
+    "naufalfx805-source": false,
+    "jesse978": false,
+    "Satianurag": false,
+    "luckyzd": false,
+    "Andy00L": false,
+    "Vinayak19112003": false,
+    "grzdev": false,
+    "ronkenx9": false,
+    "tujack39": false
   },
   "knownTargetKind": {
     "100": "issue",
     "105": "issue",
+    "116": "issue",
+    "174": "issue",
+    "283": "pr",
     "353": "pr",
     "355": "pr",
     "357": "pr",
+    "360": "issue",
     "365": "issue",
     "366": "issue",
+    "368": "issue",
+    "373": "issue",
+    "375": "issue",
+    "376": "issue",
     "377": "issue",
+    "378": "issue",
+    "380": "issue",
     "381": "issue",
     "385": "issue",
+    "387": "issue",
+    "388": "issue",
     "389": "pr",
+    "398": "issue",
     "401": "pr",
     "402": "pr",
+    "405": "issue",
     "410": "pr",
     "418": "issue",
+    "419": "issue",
+    "425": "issue",
+    "426": "issue",
+    "428": "issue",
     "429": "issue",
     "430": "issue",
     "431": "issue",
     "432": "issue",
+    "435": "issue",
+    "437": "issue",
+    "440": "issue",
+    "442": "pr",
+    "443": "issue",
     "447": "pr",
     "448": "issue",
     "450": "issue",
     "451": "pr",
+    "452": "issue",
     "453": "pr",
+    "455": "issue",
+    "456": "issue",
     "458": "issue",
     "459": "issue",
     "460": "issue",
     "461": "issue",
+    "464": "issue",
+    "467": "issue",
+    "471": "issue",
+    "472": "issue",
+    "474": "issue",
+    "475": "issue",
+    "476": "issue",
+    "477": "issue",
+    "478": "issue",
+    "480": "issue",
+    "481": "issue",
+    "483": "issue",
+    "484": "issue",
+    "485": "issue",
+    "486": "issue",
+    "487": "issue",
+    "489": "issue",
+    "491": "issue",
     "492": "issue",
     "493": "issue",
     "494": "pr",
@@ -88,6 +236,9 @@
     "498": "issue",
     "499": "issue",
     "500": "pr",
+    "501": "issue",
+    "503": "issue",
+    "513": "issue",
     "518": "pr",
     "521": "pr",
     "522": "pr",
