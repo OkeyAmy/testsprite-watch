@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-21T10:29:12.491Z",
+  "lastRun": "2026-10-21T15:30:07.709Z",
   "attempts": {
     "100": {
       "first": "2026-10-18T19:53:36.315Z",
@@ -186,7 +186,7 @@
       "claimedAt": "2026-10-18T19:53:47Z"
     },
     "282": {
-      "firstSeen": "2026-10-21T10:29:17.882Z"
+      "firstSeen": "2026-10-21T15:30:12.015Z"
     },
     "433": {
       "claimedAt": "2026-10-20T22:39:42Z"
@@ -222,7 +222,8 @@
     "Smile-Catpy": false,
     "crypticsaiyan": false,
     "ayush-that": false,
-    "Herbicide7665": false
+    "Herbicide7665": false,
+    "K1MOJ111": false
   },
   "knownTargetKind": {
     "100": "issue",
@@ -390,6 +391,7 @@
     "625": "pr",
     "626": "pr",
     "627": "pr",
-    "628": "pr"
+    "628": "pr",
+    "629": "pr"
   }
 }
