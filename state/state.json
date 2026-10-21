@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-21T00:54:21.863Z",
+  "lastRun": "2026-10-21T05:29:46.434Z",
   "attempts": {
     "100": {
       "first": "2026-10-18T19:53:36.315Z",
@@ -186,7 +186,7 @@
       "claimedAt": "2026-10-18T19:53:47Z"
     },
     "282": {
-      "firstSeen": "2026-10-21T00:54:24.306Z"
+      "firstSeen": "2026-10-21T05:29:51.254Z"
     },
     "433": {
       "claimedAt": "2026-10-20T22:39:42Z"
@@ -221,7 +221,10 @@
     "tujack39": false,
     "fyZhang66": false,
     "lxcario": false,
-    "Ololadestephen": false
+    "Ololadestephen": false,
+    "Smile-Catpy": false,
+    "crypticsaiyan": false,
+    "ayush-that": false
   },
   "knownTargetKind": {
     "100": "issue",
@@ -258,6 +261,7 @@
     "403": "issue",
     "404": "issue",
     "405": "issue",
+    "409": "pr",
     "410": "pr",
     "418": "issue",
     "419": "issue",
@@ -362,6 +366,8 @@
     "553": "pr",
     "554": "issue",
     "556": "pr",
+    "562": "pr",
+    "575": "pr",
     "576": "pr",
     "593": "pr",
     "594": "pr",
@@ -374,6 +380,12 @@
     "602": "pr",
     "605": "pr",
     "607": "pr",
-    "615": "pr"
+    "615": "pr",
+    "616": "pr",
+    "617": "pr",
+    "618": "pr",
+    "619": "pr",
+    "621": "pr",
+    "622": "issue"
   }
 }
