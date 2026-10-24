@@ -164,6 +164,28 @@ async function isPullRequest(repo, number, state) {
   return kind === "pr";
 }
 
+/** Fallback: fetch when a claimable label was first added to an issue,
+ *  used when we don't have the timestamp cached in state. */
+async function firstApprovalTime(repo, number, state, claimableLabels) {
+  const key = String(number);
+  if (state.approvalTimes && state.approvalTimes[key]) return state.approvalTimes[key];
+  try {
+    const events = await paginate(`/repos/${repo}/issues/${number}/events?per_page=100`);
+    const claimable = new Set(claimableLabels);
+    // walk oldest→newest, first claimable label wins
+    for (let i = events.length - 1; i >= 0; i--) {
+      const e = events[i];
+      if (e.event === "labeled" && claimable.has(e.label?.name)) {
+        state.approvalTimes[key] = e.created_at;
+        return e.created_at;
+      }
+    }
+  } catch {
+    // fall through → unknown
+  }
+  return null;
+}
+
 // ------------------------------------------------------------ maintainers
 
 const maintainerCache = new Map(); // login -> true/false/null(unknown)
@@ -224,6 +246,7 @@ async function main() {
     myClaims: {},
     maintainers: {},
     knownTargetKind: {},
+    approvalTimes: {},
   });
   if (!state.knownTargetKind) state.knownTargetKind = {};
 
@@ -339,6 +362,9 @@ async function main() {
     const label = e.label?.name;
 
     if (e.event === "labeled" && cfg.claimableLabels.includes(label)) {
+      // first claimable label starts the 48-hour reservation clock
+      if (!state.approvalTimes) state.approvalTimes = {};
+      if (!state.approvalTimes[String(num)]) state.approvalTimes[String(num)] = e.created_at;
       newApprovals.push({ issue: num, label, at: e.created_at });
       // a fresh approval clears a previous failed attempt for this issue
       state.attempts[num] = { ...(state.attempts[num] || {}), lastApproval: e.created_at };
@@ -382,6 +408,24 @@ async function main() {
     return true;                                        // cooldown elapsed
   });
 
+  // 48-hour reservation: newly accepted issues are reserved for the issue author
+  const reservedPool = [];
+  for (const c of freshPool) {
+    const apprTime = await firstApprovalTime(cfg.repo, c.number, state, cfg.claimableLabels);
+    let reserved = false;
+    if (apprTime) {
+      const hoursSince = (now - new Date(apprTime).getTime()) / 3600_000;
+      if (hoursSince < cfg.reservationHours && c.user.login !== cfg.me) {
+        reserved = true;
+      }
+    }
+    if (reserved) {
+      logEvent({ type: "reservation_skip", issue: c.number, detail: `reserved for @${c.user.login} (${Math.round(hoursSince)}h since approval)`, url: `https://github.com/${cfg.repo}/issues/${c.number}` });
+    } else {
+      reservedPool.push(c);
+    }
+  }
+
   // priority: issues a maintainer just commented on > newest approval > oldest issue
   freshPool.sort((a, b) => {
     const ma = maintainerCommentIssues.has(a.number) ? 1 : 0;
@@ -394,7 +438,7 @@ async function main() {
   });
 
   const claims = [];
-  for (const c of freshPool) {
+  for (const c of reservedPool) {
     if (capCount >= cfg.slotCap) break;
     if (claims.length >= cfg.maxClaimsPerRun) break;
     claims.push(c);
