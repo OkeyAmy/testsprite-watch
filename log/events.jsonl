@@ -771,3 +771,14 @@
 {"ts":"2026-10-24T00:39:11.746Z","type":"watch_label_added","issue":645,"actor":"WUWTest","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/645"}
 {"ts":"2026-10-24T00:39:11.746Z","type":"assigned","issue":549,"actor":"ayush-that","assignee":"ayush-that","url":"https://github.com/TestSprite/testsprite-cli/issues/549"}
 {"ts":"2026-10-24T00:39:11.746Z","type":"unassigned","issue":549,"actor":"Lexiie","assignee":"Lexiie","url":"https://github.com/TestSprite/testsprite-cli/issues/549"}
+{"ts":"2026-10-24T05:00:29.129Z","type":"assigned","issue":606,"actor":"WUWTest","assignee":"WUWTest","url":"https://github.com/TestSprite/testsprite-cli/issues/606"}
+{"ts":"2026-10-24T05:00:29.129Z","type":"assigned","issue":397,"actor":"tujack39","assignee":"tujack39","url":"https://github.com/TestSprite/testsprite-cli/issues/397"}
+{"ts":"2026-10-24T05:00:29.129Z","type":"unassigned","issue":397,"actor":"tujack39","assignee":"tujack39","url":"https://github.com/TestSprite/testsprite-cli/issues/397"}
+{"ts":"2026-10-24T05:00:29.129Z","type":"assigned","issue":397,"actor":"tujack39","assignee":"tujack39","url":"https://github.com/TestSprite/testsprite-cli/issues/397"}
+{"ts":"2026-10-24T05:00:29.129Z","type":"unassigned","issue":397,"actor":"K1MOJ111","assignee":"K1MOJ111","url":"https://github.com/TestSprite/testsprite-cli/issues/397"}
+{"ts":"2026-10-24T05:00:29.129Z","type":"watch_label_added","issue":649,"actor":"Xuefeng-Zhu","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/649"}
+{"ts":"2026-10-24T05:00:29.129Z","type":"watch_label_added","issue":648,"actor":"Xuefeng-Zhu","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/648"}
+{"ts":"2026-10-24T05:00:29.129Z","type":"assigned","issue":614,"actor":"Andy00L","assignee":"Andy00L","url":"https://github.com/TestSprite/testsprite-cli/issues/614"}
+{"ts":"2026-10-24T05:00:29.129Z","type":"watch_label_added","issue":646,"actor":"Xuefeng-Zhu","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/646"}
+{"ts":"2026-10-24T05:00:29.129Z","type":"watch_label_added","issue":645,"actor":"WUWTest","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/645"}
+{"ts":"2026-10-24T05:00:29.129Z","type":"assigned","issue":549,"actor":"ayush-that","assignee":"ayush-that","url":"https://github.com/TestSprite/testsprite-cli/issues/549"}
