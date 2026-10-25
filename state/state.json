@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-25T18:34:02.919Z",
+  "lastRun": "2026-10-25T21:10:40.175Z",
   "attempts": {
     "100": {
       "first": "2026-10-18T19:53:36.315Z",
@@ -201,7 +201,7 @@
       "claimedAt": "2026-10-18T19:53:47Z"
     },
     "282": {
-      "firstSeen": "2026-10-25T18:34:05.651Z"
+      "firstSeen": "2026-10-25T21:10:44.738Z"
     },
     "433": {
       "claimedAt": "2026-10-20T22:39:42Z"
@@ -242,7 +242,8 @@
     "PugarHuda": false,
     "x15967311210-crypto": false,
     "WUWTest": false,
-    "neromtoobad": false
+    "neromtoobad": false,
+    "sandman-sh": false
   },
   "knownTargetKind": {
     "100": "issue",
@@ -250,6 +251,7 @@
     "116": "issue",
     "164": "issue",
     "174": "issue",
+    "257": "pr",
     "283": "pr",
     "353": "pr",
     "355": "pr",
@@ -489,6 +491,10 @@
     "653": "pr",
     "655": "pr",
     "659": "pr",
-    "660": "pr"
+    "660": "pr",
+    "663": "issue",
+    "664": "issue",
+    "665": "pr",
+    "666": "pr"
   }
 }
