@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-26T01:11:08.859Z",
+  "lastRun": "2026-10-26T06:09:10.909Z",
   "attempts": {
     "100": {
       "first": "2026-10-18T19:53:36.315Z",
@@ -201,7 +201,7 @@
       "claimedAt": "2026-10-18T19:53:47Z"
     },
     "282": {
-      "firstSeen": "2026-10-26T01:11:12.416Z"
+      "firstSeen": "2026-10-26T06:09:14.088Z"
     },
     "433": {
       "claimedAt": "2026-10-20T22:39:42Z"
@@ -243,7 +243,8 @@
     "x15967311210-crypto": false,
     "WUWTest": false,
     "neromtoobad": false,
-    "sandman-sh": false
+    "sandman-sh": false,
+    "ShunjunGu": false
   },
   "knownTargetKind": {
     "100": "issue",
@@ -485,6 +486,7 @@
     "643": "pr",
     "644": "pr",
     "645": "issue",
+    "646": "issue",
     "647": "pr",
     "650": "issue",
     "651": "issue",
@@ -496,6 +498,7 @@
     "663": "issue",
     "664": "issue",
     "665": "pr",
-    "666": "pr"
+    "666": "pr",
+    "668": "pr"
   }
 }
