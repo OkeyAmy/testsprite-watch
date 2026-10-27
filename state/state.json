@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-27T01:44:20.193Z",
+  "lastRun": "2026-10-27T06:51:14.458Z",
   "attempts": {
     "100": {
       "first": "2026-10-18T19:53:36.315Z",
@@ -201,7 +201,7 @@
       "claimedAt": "2026-10-18T19:53:47Z"
     },
     "282": {
-      "firstSeen": "2026-10-27T01:44:23.034Z"
+      "firstSeen": "2026-10-27T06:51:18.142Z"
     },
     "433": {
       "claimedAt": "2026-10-20T22:39:42Z"
@@ -244,7 +244,8 @@
     "WUWTest": false,
     "neromtoobad": false,
     "sandman-sh": false,
-    "ShunjunGu": false
+    "ShunjunGu": false,
+    "QuincyGB": false
   },
   "knownTargetKind": {
     "100": "issue",
@@ -503,6 +504,9 @@
     "670": "pr",
     "677": "pr",
     "678": "pr",
-    "680": "pr"
+    "680": "pr",
+    "683": "pr",
+    "684": "issue",
+    "685": "pr"
   }
 }
