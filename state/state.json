@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-28T07:13:57.429Z",
+  "lastRun": "2026-10-28T14:01:50.392Z",
   "attempts": {
     "100": {
       "first": "2026-10-18T19:53:36.315Z",
@@ -201,7 +201,7 @@
       "claimedAt": "2026-10-18T19:53:47Z"
     },
     "282": {
-      "firstSeen": "2026-10-28T07:14:00.889Z"
+      "firstSeen": "2026-10-28T14:01:54.717Z"
     },
     "433": {
       "claimedAt": "2026-10-20T22:39:42Z"
@@ -247,7 +247,9 @@
     "ShunjunGu": false,
     "QuincyGB": false,
     "asosa933": false,
-    "0xanjalii": false
+    "0xanjalii": false,
+    "Gopichand-Byte": false,
+    "bagusardin25": false
   },
   "knownTargetKind": {
     "100": "issue",
@@ -515,6 +517,8 @@
     "684": "issue",
     "685": "pr",
     "690": "pr",
-    "691": "pr"
+    "691": "pr",
+    "692": "issue",
+    "694": "pr"
   }
 }
