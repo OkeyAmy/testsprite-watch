@@ -1115,3 +1115,17 @@
 {"ts":"2026-10-29T08:51:28.011Z","type":"reopened","issue":258,"actor":"sandman-sh","url":"https://github.com/TestSprite/testsprite-cli/issues/258"}
 {"ts":"2026-10-29T08:51:28.011Z","type":"watch_label_removed","issue":693,"actor":"fyZhang66","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/693"}
 {"ts":"2026-10-29T08:51:28.011Z","type":"closed","issue":693,"actor":"fyZhang66","url":"https://github.com/TestSprite/testsprite-cli/issues/693"}
+{"ts":"2026-10-29T15:38:57.194Z","type":"watch_label_added","issue":708,"actor":"bagusardin25","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/708"}
+{"ts":"2026-10-29T15:38:57.194Z","type":"closed","issue":707,"actor":"bagusardin25","url":"https://github.com/TestSprite/testsprite-cli/issues/707"}
+{"ts":"2026-10-29T15:38:57.195Z","type":"watch_label_added","issue":703,"actor":"neromtoobad","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/703"}
+{"ts":"2026-10-29T15:38:57.195Z","type":"closed","issue":652,"actor":"neromtoobad","url":"https://github.com/TestSprite/testsprite-cli/issues/652"}
+{"ts":"2026-10-29T15:38:57.195Z","type":"watch_label_added","issue":702,"actor":"neromtoobad","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/702"}
+{"ts":"2026-10-29T15:38:57.195Z","type":"closed","issue":651,"actor":"neromtoobad","url":"https://github.com/TestSprite/testsprite-cli/issues/651"}
+{"ts":"2026-10-29T15:38:57.195Z","type":"watch_label_added","issue":701,"actor":"neromtoobad","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/701"}
+{"ts":"2026-10-29T15:38:57.195Z","type":"closed","issue":650,"actor":"neromtoobad","url":"https://github.com/TestSprite/testsprite-cli/issues/650"}
+{"ts":"2026-10-29T15:38:57.195Z","type":"watch_label_added","issue":698,"actor":"mai1015","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/698"}
+{"ts":"2026-10-29T15:38:57.195Z","type":"closed","issue":697,"actor":"testsprite-hob[bot]","url":"https://github.com/TestSprite/testsprite-cli/issues/697"}
+{"ts":"2026-10-29T15:38:57.195Z","type":"watch_label_added","issue":697,"actor":"sandman-sh","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/697"}
+{"ts":"2026-10-29T15:38:57.195Z","type":"reopened","issue":258,"actor":"sandman-sh","url":"https://github.com/TestSprite/testsprite-cli/issues/258"}
+{"ts":"2026-10-29T15:38:57.195Z","type":"watch_label_removed","issue":693,"actor":"fyZhang66","label":"needs-triage","url":"https://github.com/TestSprite/testsprite-cli/issues/693"}
+{"ts":"2026-10-29T15:38:57.195Z","type":"closed","issue":693,"actor":"fyZhang66","url":"https://github.com/TestSprite/testsprite-cli/issues/693"}
