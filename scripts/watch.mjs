@@ -466,7 +466,9 @@ async function main() {
     const opener = c.user?.login;
 
     // Someone already wrote the fix — do not claim over their PR.
-    if (cfg.contestedSkip !== false) {
+    // Never applies to issues you opened: there you hold the 48h opener
+    // reservation, so a rival's PR is the one that stays blocked, not yours.
+    if (cfg.contestedSkip !== false && c.user?.login !== cfg.me) {
       const rival = await contestedBy(cfg.repo, c.number, state, cfg.me);
       if (rival) {
         logEvent({ type: "contested_skip", issue: c.number, detail: `@${rival.user} already has open PR #${rival.number}`, url: `https://github.com/${cfg.repo}/issues/${c.number}` });
@@ -490,8 +492,13 @@ async function main() {
     }
   }
 
-  // priority: issues a maintainer just commented on > newest approval > oldest issue
-  freshPool.sort((a, b) => {
+  // priority: my own issues (48h opener reservation) > maintainer just commented
+  // > newest approval > oldest issue. Note: sorted on reservedPool, because that
+  // is the list the claim loop actually walks.
+  reservedPool.sort((a, b) => {
+    const oa = a.user?.login === cfg.me ? 1 : 0;
+    const ob = b.user?.login === cfg.me ? 1 : 0;
+    if (oa !== ob) return ob - oa;
     const ma = maintainerCommentIssues.has(a.number) ? 1 : 0;
     const mb = maintainerCommentIssues.has(b.number) ? 1 : 0;
     if (ma !== mb) return mb - ma;
