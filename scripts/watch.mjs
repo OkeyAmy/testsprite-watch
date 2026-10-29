@@ -186,6 +186,26 @@ async function firstApprovalTime(repo, number, state, claimableLabels) {
   return null;
 }
 
+/** When `me` was assigned to an issue (cached) — the clock the repo's
+ *  claim TTL (24h warn / 48h release) actually runs on. */
+async function claimStart(repo, number, state, me) {
+  const key = String(number);
+  if (state.claimStarts && state.claimStarts[key]) return state.claimStarts[key];
+  try {
+    const events = await paginate(`/repos/${repo}/issues/${number}/timeline?per_page=100`);
+    const mine = events.filter((e) => e.event === "assigned" && e.assignee?.login === me);
+    const at = mine.length ? mine[mine.length - 1].created_at : null;
+    if (at) {
+      if (!state.claimStarts) state.claimStarts = {};
+      state.claimStarts[key] = at;
+      return at;
+    }
+  } catch {
+    // fall through → unknown
+  }
+  return null;
+}
+
 // ------------------------------------------------------------ maintainers
 
 const maintainerCache = new Map(); // login -> true/false/null(unknown)
@@ -467,24 +487,39 @@ async function main() {
     }
   }
 
-  // ---- 8. TTL watch: my claims nearing 96h without a linked PR -------------
+  // ---- 8. TTL watch: repo policy is 24h warning / 48h release --------------
+  // Claims opened before CLAIM_TTL_SINCE (2026-09-24) are grandfathered and
+  // never expire, so they never produce a warning either.
   const ttlWarnings = [];
-  const knownClaims = mine.filter((i) => {
+  const ttlSinceMs = new Date(cfg.ttlSince).getTime();
+  const knownClaims = [];
+  for (const i of mine) {
     if (!state.myClaims[i.number]?.claimedAt) {
       state.myClaims[i.number] = { ...(state.myClaims[i.number] || {}), firstSeen: iso() };
     }
-    const at = state.myClaims[i.number].claimedAt;
-    if (!at) return false;
-    return (now - new Date(at).getTime()) / 3600_000 >= cfg.ttlWarnHours;
-  });
+    const at = state.myClaims[i.number].claimedAt || (await claimStart(cfg.repo, i.number, state, cfg.me));
+    if (!at) continue;
+    state.myClaims[i.number].claimedAt = at;
+    knownClaims.push({ i, at, ageH: (now - new Date(at).getTime()) / 3600_000 });
+  }
   if (knownClaims.length > 0) {
     const openPrs = await paginate(`/repos/${cfg.repo}/pulls?state=open`, { maxPages: 5 });
     const myPrs = openPrs.filter((p) => p.user.login === cfg.me && p.body);
-    for (const i of knownClaims) {
-      const at = state.myClaims[i.number].claimedAt;
-      const ageH = Math.round((now - new Date(at).getTime()) / 3600_000);
-      const linked = myPrs.some((p) => new RegExp(`#\\b${i.number}\\b`).test(p.body));
-      ttlWarnings.push({ issue: i.number, title: i.title, ageH, linked, url: `https://github.com/${cfg.repo}/issues/${i.number}` });
+    for (const { i, at, ageH } of knownClaims) {
+      const grandfathered = new Date(at).getTime() < ttlSinceMs;
+      const linked = myPrs.some((p) => {
+        const re = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?|part\s+of|refs?|references?|related\s+to)\s*:?\s+#(\d+)/gi;
+        return [...p.body.matchAll(re)].some((m) => Number(m[1]) === i.number);
+      });
+      ttlWarnings.push({
+        issue: i.number,
+        title: i.title,
+        ageH: Math.round(ageH),
+        linked,
+        grandfathered,
+        due: !grandfathered && !linked && ageH >= cfg.ttlReleaseHours,
+        url: `https://github.com/${cfg.repo}/issues/${i.number}`,
+      });
     }
   }
 
@@ -506,10 +541,15 @@ async function main() {
   }
   if (claimResults.length === 0) summary.push(`- claims: none (pool ${claimableNow}, cap ${capCount}/${cfg.slotCap})`);
   for (const r of claimResults) summary.push(`- claim [#${r.issue}](${r.url}): **${r.result}** — ${r.title}`);
-  if (ttlWarnings.length) {
-    for (const w of ttlWarnings) {
-      summary.push(`- ⚠️ my claim [#${w.issue}](${w.url}) is **${w.ageH}h** old, PR linked: **${w.linked ? "yes" : "NO"}** (96h TTL!)`);
-    }
+  for (const w of ttlWarnings) {
+    const status = w.grandfathered
+      ? "🔒 grandfathered — assigned before 2026-09-24, TTL will not release it"
+      : w.linked
+        ? "✅ held by a linked PR"
+        : w.due
+          ? `⛔ due for release — ${w.ageH}h old, no linked PR (${cfg.ttlReleaseHours}h TTL)`
+          : `⏳ ${w.ageH}h old — releases at ${cfg.ttlReleaseHours}h without a linked PR`;
+    summary.push(`- claim [#${w.issue}](${w.url}): ${status}`);
   }
   summary.push(`- claimable pool now: ${claimableNow} · needs-triage pipeline: ${triagePipeline}`);
 
