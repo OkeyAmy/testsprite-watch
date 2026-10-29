@@ -192,6 +192,29 @@ async function approvalTime(repo, number, state, claimableLabels, touchedAt = nu
   return null;
 }
 
+/** An open PR someone else already opened against this issue. Claiming over it
+ *  duplicates finished work, so the watcher leaves those issues alone. */
+async function contestedBy(repo, number, state, me, ttlHours = 6) {
+  const key = String(number);
+  const cached = state.contested && state.contested[key];
+  if (cached && Date.now() - Date.parse(cached.checkedAt) < ttlHours * 3600_000) return cached.pr;
+  try {
+    const events = await paginate(`/repos/${repo}/issues/${number}/timeline?per_page=100`);
+    const rivals = events
+      .filter((e) => e.event === "cross-referenced" && e.source?.issue?.pull_request)
+      .map((e) => e.source.issue)
+      .filter((i) => i.state === "open" && i.user?.login !== me);
+    const pr = rivals.length
+      ? { number: rivals[rivals.length - 1].number, user: rivals[rivals.length - 1].user.login }
+      : null;
+    if (!state.contested) state.contested = {};
+    state.contested[key] = { checkedAt: iso(), pr };
+    return pr;
+  } catch {
+    return null;
+  }
+}
+
 /** When `me` was assigned to an issue (cached) — the clock the repo's
  *  claim TTL (24h warn / 48h release) actually runs on. */
 async function claimStart(repo, number, state, me) {
@@ -438,8 +461,20 @@ async function main() {
   // 48h opener reservation, mirroring issue-triage.yml: the clock starts at the
   // LATEST accept label, and issues opened by maintainers or bots are never reserved.
   const reservedPool = [];
+  const contestedSkipped = [];
   for (const c of freshPool) {
     const opener = c.user?.login;
+
+    // Someone already wrote the fix — do not claim over their PR.
+    if (cfg.contestedSkip !== false) {
+      const rival = await contestedBy(cfg.repo, c.number, state, cfg.me);
+      if (rival) {
+        logEvent({ type: "contested_skip", issue: c.number, detail: `@${rival.user} already has open PR #${rival.number}`, url: `https://github.com/${cfg.repo}/issues/${c.number}` });
+        contestedSkipped.push({ issue: c.number, rival });
+        continue;
+      }
+    }
+
     const apprTime = await approvalTime(cfg.repo, c.number, state, cfg.claimableLabels, c.updated_at);
     let reserved = false;
     let hoursSince = null;
@@ -560,7 +595,12 @@ async function main() {
           : `⏳ ${w.ageH}h old — releases at ${cfg.ttlReleaseHours}h without a linked PR`;
     summary.push(`- claim [#${w.issue}](${w.url}): ${status}`);
   }
-  summary.push(`- claimable pool now: ${claimableNow} · needs-triage pipeline: ${triagePipeline}`);
+  if (contestedSkipped.length) {
+    for (const c of contestedSkipped) {
+      summary.push(`- skipped [#${c.issue}](https://github.com/${cfg.repo}/issues/${c.issue}): @${c.rival.user} already has open PR #${c.rival.number}`);
+    }
+  }
+  summary.push(`- claimable pool: ${claimableNow} raw · ${contestedSkipped.length} contested · ${reservedPool.length} eligible · needs-triage pipeline: ${triagePipeline}`);
 
   const text = summary.join("\n");
   console.log("\n" + text);

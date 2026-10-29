@@ -8,6 +8,7 @@
   "watchLabels": ["needs-triage"],
   "maintainers": ["zeshi-du", "ruili-testsprite", "yunhaoTestSprite"],
   "attemptCooldownDays": 14,
+  "contestedSkip": true,
   "ttlWarnHours": 24,
   "ttlReleaseHours": 48,
   "ttlSince": "2026-09-24T00:00:00Z",
