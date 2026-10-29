@@ -192,24 +192,47 @@ async function approvalTime(repo, number, state, claimableLabels, touchedAt = nu
   return null;
 }
 
-/** An open PR someone else already opened against this issue. Claiming over it
- *  duplicates finished work, so the watcher leaves those issues alone. */
+/** Open PRs other people already opened against this issue. Whether that should
+ *  block a claim depends on whether the author can still act on it — see
+ *  rivalClaims(). */
 async function contestedBy(repo, number, state, me, ttlHours = 6) {
   const key = String(number);
   const cached = state.contested && state.contested[key];
-  if (cached && Date.now() - Date.parse(cached.checkedAt) < ttlHours * 3600_000) return cached.pr;
+  if (cached && Date.now() - Date.parse(cached.checkedAt) < ttlHours * 3600_000) {
+    return cached.rivals || (cached.pr ? [cached.pr] : []);
+  }
   try {
     const events = await paginate(`/repos/${repo}/issues/${number}/timeline?per_page=100`);
-    const rivals = events
-      .filter((e) => e.event === "cross-referenced" && e.source?.issue?.pull_request)
-      .map((e) => e.source.issue)
-      .filter((i) => i.state === "open" && i.user?.login !== me);
-    const pr = rivals.length
-      ? { number: rivals[rivals.length - 1].number, user: rivals[rivals.length - 1].user.login }
-      : null;
+    const seen = new Map();
+    for (const e of events) {
+      if (e.event !== "cross-referenced" || !e.source?.issue?.pull_request) continue;
+      const i = e.source.issue;
+      if (i.state !== "open" || i.user?.login === me) continue;
+      seen.set(i.number, { number: i.number, user: i.user?.login });
+    }
+    const rivals = [...seen.values()];
     if (!state.contested) state.contested = {};
-    state.contested[key] = { checkedAt: iso(), pr };
-    return pr;
+    state.contested[key] = { checkedAt: iso(), rivals };
+    return rivals;
+  } catch {
+    return [];
+  }
+}
+
+/** How many open issues a login currently holds — the exact number the repo bot
+ *  compares against SLOT_CAP (issue-triage.yml counts assigned issues and
+ *  filters out PRs). Returns null when the count cannot be established, in
+ *  which case callers must assume the rival can still claim. */
+async function rivalClaims(repo, login, state, ttlHours = 1) {
+  if (!login) return null;
+  const cached = state.rivalClaims && state.rivalClaims[login];
+  if (cached && Date.now() - Date.parse(cached.checkedAt) < ttlHours * 3600_000) return cached.count;
+  try {
+    const items = await api(`/repos/${repo}/issues?state=open&assignee=${encodeURIComponent(login)}&per_page=100`);
+    const count = items.filter((i) => !i.pull_request).length;
+    if (!state.rivalClaims) state.rivalClaims = {};
+    state.rivalClaims[login] = { checkedAt: iso(), count };
+    return count;
   } catch {
     return null;
   }
@@ -296,6 +319,7 @@ async function main() {
     maintainers: {},
     knownTargetKind: {},
     approvalTimes: {},
+    rivalClaims: {},
   });
   if (!state.knownTargetKind) state.knownTargetKind = {};
 
@@ -462,18 +486,43 @@ async function main() {
   // LATEST accept label, and issues opened by maintainers or bots are never reserved.
   const reservedPool = [];
   const contestedSkipped = [];
+  const contestedPoached = [];
   for (const c of freshPool) {
     const opener = c.user?.login;
 
-    // Someone already wrote the fix — do not claim over their PR.
+    // Someone already wrote the fix. A claim is only worth taking when every
+    // rival author is stuck at the slot cap: they cannot /assign, their PR stays
+    // in needs-issue, and the claim is winnable. If even one rival has a free
+    // slot, skip — they would just claim it back.
     // Never applies to issues you opened: there you hold the 48h opener
     // reservation, so a rival's PR is the one that stays blocked, not yours.
     if (cfg.contestedSkip !== false && c.user?.login !== cfg.me) {
-      const rival = await contestedBy(cfg.repo, c.number, state, cfg.me);
-      if (rival) {
-        logEvent({ type: "contested_skip", issue: c.number, detail: `@${rival.user} already has open PR #${rival.number}`, url: `https://github.com/${cfg.repo}/issues/${c.number}` });
-        contestedSkipped.push({ issue: c.number, rival });
-        continue;
+      const rivals = await contestedBy(cfg.repo, c.number, state, cfg.me);
+      if (rivals.length) {
+        const frozen = [];
+        const live = [];
+        for (const r of rivals) {
+          const claims = await rivalClaims(cfg.repo, r.user, state);
+          const maint = await isMaintainer(r.user, state, cfg);
+          if (!maint && claims !== null && claims >= cfg.slotCap) frozen.push({ ...r, claims });
+          else live.push({ ...r, claims, maint });
+        }
+        const poachable = cfg.poachCappedRivals === true && frozen.length > 0 && live.length === 0;
+        if (!poachable) {
+          const why = live[0]
+            ? `@${live[0].user} already has open PR #${live[0].number} and can still claim`
+            : `@${frozen[0]?.user ?? rivals[0].user} already has open PR #${frozen[0]?.number ?? rivals[0].number}`;
+          logEvent({ type: "contested_skip", issue: c.number, detail: why, url: `https://github.com/${cfg.repo}/issues/${c.number}` });
+          contestedSkipped.push({ issue: c.number, rival: live[0] || frozen[0] || rivals[0], why });
+          continue;
+        }
+        contestedPoached.push({ issue: c.number, rivals: frozen });
+        logEvent({
+          type: "contested_poach",
+          issue: c.number,
+          detail: `all ${frozen.length} rival PR author(s) at ${cfg.slotCap}/${cfg.slotCap}: ${frozen.map((r) => `@${r.user} (#${r.number}, ${r.claims} claims)`).join(", ")}`,
+          url: `https://github.com/${cfg.repo}/issues/${c.number}`,
+        });
       }
     }
 
@@ -602,12 +651,13 @@ async function main() {
           : `⏳ ${w.ageH}h old — releases at ${cfg.ttlReleaseHours}h without a linked PR`;
     summary.push(`- claim [#${w.issue}](${w.url}): ${status}`);
   }
-  if (contestedSkipped.length) {
-    for (const c of contestedSkipped) {
-      summary.push(`- skipped [#${c.issue}](https://github.com/${cfg.repo}/issues/${c.issue}): @${c.rival.user} already has open PR #${c.rival.number}`);
-    }
+  for (const c of contestedSkipped) {
+    summary.push(`- skipped [#${c.issue}](https://github.com/${cfg.repo}/issues/${c.issue}): ${c.why || `@${c.rival.user} already has open PR #${c.rival.number}`}`);
   }
-  summary.push(`- claimable pool: ${claimableNow} raw · ${contestedSkipped.length} contested · ${reservedPool.length} eligible · needs-triage pipeline: ${triagePipeline}`);
+  for (const c of contestedPoached) {
+    summary.push(`- poachable [#${c.issue}](https://github.com/${cfg.repo}/issues/${c.issue}): every rival is at the cap — ${c.rivals.map((r) => `@${r.user} (${r.claims}/${cfg.slotCap}, PR #${r.number})`).join(", ")}`);
+  }
+  summary.push(`- claimable pool: ${claimableNow} raw · ${contestedSkipped.length} skipped · ${contestedPoached.length} poachable · ${reservedPool.length} eligible · needs-triage pipeline: ${triagePipeline}`);
 
   const text = summary.join("\n");
   console.log("\n" + text);
