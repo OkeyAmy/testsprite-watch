@@ -164,21 +164,27 @@ async function isPullRequest(repo, number, state) {
   return kind === "pr";
 }
 
-/** Fallback: fetch when a claimable label was first added to an issue,
- *  used when we don't have the timestamp cached in state. */
-async function firstApprovalTime(repo, number, state, claimableLabels) {
+/** When the 48h opener reservation starts: the repo bot re-arms it on the
+ *  LATEST claimable-label event, not the first (issue-triage.yml takes the max). */
+async function approvalTime(repo, number, state, claimableLabels, touchedAt = null) {
   const key = String(number);
-  if (state.approvalTimes && state.approvalTimes[key]) return state.approvalTimes[key];
+  const cached = state.approvalTimes && state.approvalTimes[key];
+  // A cached time is only trustworthy while nothing changed on the issue:
+  // any re-label bumps updated_at, which may have re-armed the reservation.
+  if (cached && (!touchedAt || Date.parse(touchedAt) <= Date.parse(cached))) return cached;
   try {
     const events = await paginate(`/repos/${repo}/issues/${number}/events?per_page=100`);
     const claimable = new Set(claimableLabels);
-    // walk oldest→newest, first claimable label wins
-    for (let i = events.length - 1; i >= 0; i--) {
-      const e = events[i];
-      if (e.event === "labeled" && claimable.has(e.label?.name)) {
-        state.approvalTimes[key] = e.created_at;
-        return e.created_at;
-      }
+    let latest = 0;
+    for (const e of events) {
+      if (e.event !== "labeled" || !claimable.has(e.label?.name)) continue;
+      const t = Date.parse(e.created_at);
+      if (!Number.isNaN(t)) latest = Math.max(latest, t);
+    }
+    if (latest) {
+      if (!state.approvalTimes) state.approvalTimes = {};
+      state.approvalTimes[key] = new Date(latest).toISOString();
+      return state.approvalTimes[key];
     }
   } catch {
     // fall through → unknown
@@ -382,9 +388,10 @@ async function main() {
     const label = e.label?.name;
 
     if (e.event === "labeled" && cfg.claimableLabels.includes(label)) {
-      // first claimable label starts the 48-hour reservation clock
+      // the repo bot re-arms the 48h opener reservation on every accept label
       if (!state.approvalTimes) state.approvalTimes = {};
-      if (!state.approvalTimes[String(num)]) state.approvalTimes[String(num)] = e.created_at;
+      const prior = Date.parse(state.approvalTimes[String(num)] || 0) || 0;
+      if (Date.parse(e.created_at) > prior) state.approvalTimes[String(num)] = e.created_at;
       newApprovals.push({ issue: num, label, at: e.created_at });
       // a fresh approval clears a previous failed attempt for this issue
       state.attempts[num] = { ...(state.attempts[num] || {}), lastApproval: e.created_at };
@@ -428,19 +435,21 @@ async function main() {
     return true;                                        // cooldown elapsed
   });
 
-  // 48-hour reservation: newly accepted issues are reserved for the issue author
+  // 48h opener reservation, mirroring issue-triage.yml: the clock starts at the
+  // LATEST accept label, and issues opened by maintainers or bots are never reserved.
   const reservedPool = [];
   for (const c of freshPool) {
-    const apprTime = await firstApprovalTime(cfg.repo, c.number, state, cfg.claimableLabels);
+    const opener = c.user?.login;
+    const apprTime = await approvalTime(cfg.repo, c.number, state, cfg.claimableLabels, c.updated_at);
     let reserved = false;
-    if (apprTime) {
-      const hoursSince = (now - new Date(apprTime).getTime()) / 3600_000;
-      if (hoursSince < cfg.reservationHours && c.user.login !== cfg.me) {
-        reserved = true;
-      }
+    let hoursSince = null;
+    if (apprTime && opener && opener !== cfg.me && c.user?.type !== "Bot") {
+      const openerIsMaintainer = await isMaintainer(opener, state, cfg, c.author_association);
+      hoursSince = (now - new Date(apprTime).getTime()) / 3600_000;
+      if (!openerIsMaintainer && hoursSince < cfg.reservationHours) reserved = true;
     }
     if (reserved) {
-      logEvent({ type: "reservation_skip", issue: c.number, detail: `reserved for @${c.user.login} (${Math.round(hoursSince)}h since approval)`, url: `https://github.com/${cfg.repo}/issues/${c.number}` });
+      logEvent({ type: "reservation_skip", issue: c.number, detail: `reserved for @${opener} (${Math.round(hoursSince)}h since approval)`, url: `https://github.com/${cfg.repo}/issues/${c.number}` });
     } else {
       reservedPool.push(c);
     }
