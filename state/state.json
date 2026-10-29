@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-28T23:22:58.863Z",
+  "lastRun": "2026-10-29T02:33:10.041Z",
   "attempts": {
     "100": {
       "first": "2026-10-18T19:53:36.315Z",
@@ -201,7 +201,7 @@
       "claimedAt": "2026-10-18T19:53:47Z"
     },
     "282": {
-      "firstSeen": "2026-10-28T23:23:01.950Z"
+      "firstSeen": "2026-10-29T02:33:13.552Z"
     },
     "433": {
       "claimedAt": "2026-10-20T22:39:42Z"
@@ -249,7 +249,8 @@
     "asosa933": false,
     "0xanjalii": false,
     "Gopichand-Byte": false,
-    "bagusardin25": false
+    "bagusardin25": false,
+    "mai1015": false
   },
   "knownTargetKind": {
     "100": "issue",
@@ -520,6 +521,8 @@
     "691": "pr",
     "692": "issue",
     "693": "issue",
-    "694": "pr"
+    "694": "pr",
+    "695": "issue",
+    "696": "pr"
   }
 }
