@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-11-01T02:36:03.335Z",
+  "lastRun": "2026-11-01T09:40:02.577Z",
   "attempts": {
     "100": {
       "first": "2026-10-18T19:53:36.315Z",
@@ -621,7 +621,7 @@
   },
   "contested": {
     "404": {
-      "checkedAt": "2026-10-31T20:40:08.210Z",
+      "checkedAt": "2026-11-01T09:40:08.706Z",
       "rivals": [
         {
           "number": 409,
@@ -630,7 +630,7 @@
       ]
     },
     "515": {
-      "checkedAt": "2026-10-31T20:40:07.277Z",
+      "checkedAt": "2026-11-01T09:40:07.681Z",
       "rivals": [
         {
           "number": 521,
@@ -643,7 +643,7 @@
       ]
     },
     "569": {
-      "checkedAt": "2026-10-31T20:40:06.633Z",
+      "checkedAt": "2026-11-01T09:40:06.846Z",
       "rivals": [
         {
           "number": 598,
@@ -656,8 +656,13 @@
       ]
     },
     "654": {
-      "checkedAt": "2026-10-31T20:40:06.048Z",
-      "rivals": []
+      "checkedAt": "2026-11-01T09:40:06.452Z",
+      "rivals": [
+        {
+          "number": 717,
+          "user": "zhengqiuyang"
+        }
+      ]
     },
     "667": {
       "checkedAt": "2026-10-31T00:58:00.976Z",
@@ -681,26 +686,30 @@
       "rivals": []
     },
     "698": {
-      "checkedAt": "2026-10-31T20:40:05.576Z",
+      "checkedAt": "2026-11-01T09:40:05.660Z",
       "rivals": [
         {
           "number": 699,
           "user": "mai1015"
+        },
+        {
+          "number": 718,
+          "user": "zhengqiuyang"
         }
       ]
     }
   },
   "rivalClaims": {
     "luckyzd": {
-      "checkedAt": "2026-11-01T02:36:07.097Z",
+      "checkedAt": "2026-11-01T09:40:07.951Z",
       "count": 3
     },
     "ronkenx9": {
-      "checkedAt": "2026-11-01T02:36:07.324Z",
+      "checkedAt": "2026-11-01T09:40:08.208Z",
       "count": 1
     },
     "mai1015": {
-      "checkedAt": "2026-11-01T02:36:06.318Z",
+      "checkedAt": "2026-11-01T09:40:05.804Z",
       "count": 0
     },
     "asosa933": {
@@ -708,8 +717,12 @@
       "count": 0
     },
     "protonjls": {
-      "checkedAt": "2026-11-01T02:36:06.798Z",
+      "checkedAt": "2026-11-01T09:40:07.171Z",
       "count": 2
+    },
+    "zhengqiuyang": {
+      "checkedAt": "2026-11-01T09:40:06.043Z",
+      "count": 0
     }
   },
   "approvalTimes": {
