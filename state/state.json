@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-11-02T02:49:08.576Z",
+  "lastRun": "2026-11-02T10:04:55.510Z",
   "attempts": {
     "100": {
       "first": "2026-10-18T19:53:36.315Z",
@@ -289,7 +289,8 @@
     "Yazan-O": false,
     "lidxgoesgiri": false,
     "RK-625": false,
-    "zhengqiuyang": false
+    "zhengqiuyang": false,
+    "dianchechihan": false
   },
   "knownTargetKind": {
     "100": "issue",
@@ -617,11 +618,15 @@
     "715": "pr",
     "716": "pr",
     "717": "pr",
-    "718": "pr"
+    "718": "pr",
+    "719": "pr",
+    "720": "pr",
+    "721": "pr",
+    "722": "pr"
   },
   "contested": {
     "404": {
-      "checkedAt": "2026-11-01T23:52:48.291Z",
+      "checkedAt": "2026-11-02T10:05:02.573Z",
       "rivals": [
         {
           "number": 409,
@@ -630,7 +635,7 @@
       ]
     },
     "515": {
-      "checkedAt": "2026-11-01T23:52:47.251Z",
+      "checkedAt": "2026-11-02T10:05:01.363Z",
       "rivals": [
         {
           "number": 521,
@@ -643,7 +648,7 @@
       ]
     },
     "569": {
-      "checkedAt": "2026-11-01T23:52:46.566Z",
+      "checkedAt": "2026-11-02T10:05:00.580Z",
       "rivals": [
         {
           "number": 598,
@@ -656,7 +661,7 @@
       ]
     },
     "654": {
-      "checkedAt": "2026-11-01T23:52:46.169Z",
+      "checkedAt": "2026-11-02T10:04:59.949Z",
       "rivals": [
         {
           "number": 717,
@@ -701,11 +706,11 @@
   },
   "rivalClaims": {
     "luckyzd": {
-      "checkedAt": "2026-11-02T02:49:11.772Z",
+      "checkedAt": "2026-11-02T10:05:01.674Z",
       "count": 3
     },
     "ronkenx9": {
-      "checkedAt": "2026-11-02T02:49:12.011Z",
+      "checkedAt": "2026-11-02T10:05:01.987Z",
       "count": 1
     },
     "mai1015": {
@@ -717,11 +722,11 @@
       "count": 0
     },
     "protonjls": {
-      "checkedAt": "2026-11-02T02:49:11.494Z",
+      "checkedAt": "2026-11-02T10:05:00.846Z",
       "count": 2
     },
     "zhengqiuyang": {
-      "checkedAt": "2026-11-02T02:49:11.215Z",
+      "checkedAt": "2026-11-02T10:05:00.151Z",
       "count": 0
     }
   },
