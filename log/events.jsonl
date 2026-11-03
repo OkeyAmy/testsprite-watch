@@ -1602,3 +1602,17 @@
 {"ts":"2026-11-03T09:44:20.940Z","type":"assigned","issue":698,"actor":"dianchechihan","assignee":"dianchechihan","url":"https://github.com/TestSprite/testsprite-cli/issues/698"}
 {"ts":"2026-11-03T09:44:22.159Z","type":"contested_poach","issue":404,"detail":"all 1 rival PR author(s) at 3/3: @luckyzd (#409, 3 claims)","url":"https://github.com/TestSprite/testsprite-cli/issues/404"}
 {"ts":"2026-11-03T09:44:23.675Z","type":"claim_posted","issue":404,"detail":"[Hackathon] fix(project): docs upload drops its timeout before reading a failed PUT response body","url":"https://github.com/TestSprite/testsprite-cli/issues/404"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"my_claim_comment","issue":404,"actor":"OkeyAmy","detail":"/assign","url":"https://github.com/TestSprite/testsprite-cli/issues/404#issuecomment-6600308854"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"claim_confirmed","issue":404,"actor":"testsprite-hob[bot]","detail":"Assigned to @OkeyAmy. Thanks for taking this on. (0 more slots available.) Your open assigned issues (3/3): - TestSprite/testsprite-cli#433 — [Hackathon] fix(http): on a corporate network the CLI fail…","url":"https://github.com/TestSprite/testsprite-cli/issues/404#issuecomment-6600313058"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"assigned","issue":404,"actor":"OkeyAmy","assignee":"OkeyAmy","url":"https://github.com/TestSprite/testsprite-cli/issues/404"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"assigned","issue":726,"actor":"zeshi-du","assignee":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/726"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"closed","issue":258,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/258"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"closed","issue":282,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/282"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"assigned","issue":277,"actor":"zeshi-du","assignee":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/277"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"unassigned","issue":186,"actor":"yuhaouno","assignee":"yuhaouno","url":"https://github.com/TestSprite/testsprite-cli/issues/186"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"approval_removed","issue":175,"actor":"zeshi-du","label":"accepted","url":"https://github.com/TestSprite/testsprite-cli/issues/175"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"unassigned","issue":175,"actor":"guaguagf","assignee":"guaguagf","url":"https://github.com/TestSprite/testsprite-cli/issues/175"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"closed","issue":235,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/235"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"assigned","issue":515,"actor":"zhengqiuyang","assignee":"zhengqiuyang","url":"https://github.com/TestSprite/testsprite-cli/issues/515"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"assigned","issue":569,"actor":"zhengqiuyang","assignee":"zhengqiuyang","url":"https://github.com/TestSprite/testsprite-cli/issues/569"}
+{"ts":"2026-11-03T17:21:29.821Z","type":"assigned","issue":654,"actor":"zhengqiuyang","assignee":"zhengqiuyang","url":"https://github.com/TestSprite/testsprite-cli/issues/654"}
