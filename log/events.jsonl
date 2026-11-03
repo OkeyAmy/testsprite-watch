@@ -1581,3 +1581,8 @@
 {"ts":"2026-11-02T20:16:23.546Z","type":"assigned","issue":698,"actor":"dianchechihan","assignee":"dianchechihan","url":"https://github.com/TestSprite/testsprite-cli/issues/698"}
 {"ts":"2026-11-02T20:16:24.745Z","type":"contested_skip","issue":515,"detail":"@ronkenx9 already has open PR #596 and can still claim","url":"https://github.com/TestSprite/testsprite-cli/issues/515"}
 {"ts":"2026-11-02T20:16:25.264Z","type":"contested_poach","issue":404,"detail":"all 1 rival PR author(s) at 3/3: @luckyzd (#409, 3 claims)","url":"https://github.com/TestSprite/testsprite-cli/issues/404"}
+{"ts":"2026-11-03T02:23:24.751Z","type":"assigned","issue":515,"actor":"zhengqiuyang","assignee":"zhengqiuyang","url":"https://github.com/TestSprite/testsprite-cli/issues/515"}
+{"ts":"2026-11-03T02:23:24.751Z","type":"assigned","issue":569,"actor":"zhengqiuyang","assignee":"zhengqiuyang","url":"https://github.com/TestSprite/testsprite-cli/issues/569"}
+{"ts":"2026-11-03T02:23:24.751Z","type":"assigned","issue":654,"actor":"zhengqiuyang","assignee":"zhengqiuyang","url":"https://github.com/TestSprite/testsprite-cli/issues/654"}
+{"ts":"2026-11-03T02:23:24.751Z","type":"assigned","issue":698,"actor":"dianchechihan","assignee":"dianchechihan","url":"https://github.com/TestSprite/testsprite-cli/issues/698"}
+{"ts":"2026-11-03T02:23:25.547Z","type":"contested_poach","issue":404,"detail":"all 1 rival PR author(s) at 3/3: @luckyzd (#409, 3 claims)","url":"https://github.com/TestSprite/testsprite-cli/issues/404"}
