@@ -1734,3 +1734,15 @@
 {"ts":"2026-11-06T10:24:48.848Z","type":"unassigned","issue":175,"actor":"guaguagf","assignee":"guaguagf","url":"https://github.com/TestSprite/testsprite-cli/issues/175"}
 {"ts":"2026-11-06T10:24:48.848Z","type":"closed","issue":235,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/235"}
 {"ts":"2026-11-06T10:24:49.811Z","type":"contested_poach","issue":654,"detail":"all 1 rival PR author(s) at 3/3: @Davidson3556 (#576, 3 claims)","url":"https://github.com/TestSprite/testsprite-cli/issues/654"}
+{"ts":"2026-11-06T17:36:21.199Z","type":"unassigned","issue":654,"actor":"zhengqiuyang","assignee":"zhengqiuyang","url":"https://github.com/TestSprite/testsprite-cli/issues/654"}
+{"ts":"2026-11-06T17:36:21.199Z","type":"closed","issue":726,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/726"}
+{"ts":"2026-11-06T17:36:21.199Z","type":"assigned","issue":404,"actor":"OkeyAmy","assignee":"OkeyAmy","url":"https://github.com/TestSprite/testsprite-cli/issues/404"}
+{"ts":"2026-11-06T17:36:21.199Z","type":"assigned","issue":726,"actor":"zeshi-du","assignee":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/726"}
+{"ts":"2026-11-06T17:36:21.199Z","type":"closed","issue":258,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/258"}
+{"ts":"2026-11-06T17:36:21.199Z","type":"closed","issue":282,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/282"}
+{"ts":"2026-11-06T17:36:21.199Z","type":"assigned","issue":277,"actor":"zeshi-du","assignee":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/277"}
+{"ts":"2026-11-06T17:36:21.199Z","type":"unassigned","issue":186,"actor":"yuhaouno","assignee":"yuhaouno","url":"https://github.com/TestSprite/testsprite-cli/issues/186"}
+{"ts":"2026-11-06T17:36:21.199Z","type":"approval_removed","issue":175,"actor":"zeshi-du","label":"accepted","url":"https://github.com/TestSprite/testsprite-cli/issues/175"}
+{"ts":"2026-11-06T17:36:21.199Z","type":"unassigned","issue":175,"actor":"guaguagf","assignee":"guaguagf","url":"https://github.com/TestSprite/testsprite-cli/issues/175"}
+{"ts":"2026-11-06T17:36:21.199Z","type":"closed","issue":235,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/235"}
+{"ts":"2026-11-06T17:36:22.019Z","type":"contested_poach","issue":654,"detail":"all 1 rival PR author(s) at 3/3: @Davidson3556 (#576, 3 claims)","url":"https://github.com/TestSprite/testsprite-cli/issues/654"}
