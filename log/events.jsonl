@@ -1818,3 +1818,15 @@
 {"ts":"2026-11-07T22:50:02.341Z","type":"approval_removed","issue":175,"actor":"zeshi-du","label":"accepted","url":"https://github.com/TestSprite/testsprite-cli/issues/175"}
 {"ts":"2026-11-07T22:50:02.341Z","type":"unassigned","issue":175,"actor":"guaguagf","assignee":"guaguagf","url":"https://github.com/TestSprite/testsprite-cli/issues/175"}
 {"ts":"2026-11-07T22:50:02.341Z","type":"closed","issue":235,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/235"}
+{"ts":"2026-11-08T01:53:32.668Z","type":"assigned","issue":654,"actor":"naufalfx805-source","assignee":"naufalfx805-source","url":"https://github.com/TestSprite/testsprite-cli/issues/654"}
+{"ts":"2026-11-08T01:53:32.668Z","type":"unassigned","issue":654,"actor":"zhengqiuyang","assignee":"zhengqiuyang","url":"https://github.com/TestSprite/testsprite-cli/issues/654"}
+{"ts":"2026-11-08T01:53:32.668Z","type":"closed","issue":726,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/726"}
+{"ts":"2026-11-08T01:53:32.668Z","type":"assigned","issue":404,"actor":"OkeyAmy","assignee":"OkeyAmy","url":"https://github.com/TestSprite/testsprite-cli/issues/404"}
+{"ts":"2026-11-08T01:53:32.668Z","type":"assigned","issue":726,"actor":"zeshi-du","assignee":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/726"}
+{"ts":"2026-11-08T01:53:32.668Z","type":"closed","issue":258,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/258"}
+{"ts":"2026-11-08T01:53:32.668Z","type":"closed","issue":282,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/282"}
+{"ts":"2026-11-08T01:53:32.669Z","type":"assigned","issue":277,"actor":"zeshi-du","assignee":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/277"}
+{"ts":"2026-11-08T01:53:32.669Z","type":"unassigned","issue":186,"actor":"yuhaouno","assignee":"yuhaouno","url":"https://github.com/TestSprite/testsprite-cli/issues/186"}
+{"ts":"2026-11-08T01:53:32.669Z","type":"approval_removed","issue":175,"actor":"zeshi-du","label":"accepted","url":"https://github.com/TestSprite/testsprite-cli/issues/175"}
+{"ts":"2026-11-08T01:53:32.669Z","type":"unassigned","issue":175,"actor":"guaguagf","assignee":"guaguagf","url":"https://github.com/TestSprite/testsprite-cli/issues/175"}
+{"ts":"2026-11-08T01:53:32.669Z","type":"closed","issue":235,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/235"}
