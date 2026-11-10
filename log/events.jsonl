@@ -1914,3 +1914,56 @@
 {"ts":"2026-11-09T20:44:17.225Z","type":"assigned","issue":277,"actor":"zeshi-du","assignee":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/277"}
 {"ts":"2026-11-09T20:44:17.225Z","type":"unassigned","issue":186,"actor":"yuhaouno","assignee":"yuhaouno","url":"https://github.com/TestSprite/testsprite-cli/issues/186"}
 {"ts":"2026-11-09T20:44:19.431Z","type":"contested_skip","issue":672,"detail":"@mdshzb04 already has open PR #602 and can still claim","url":"https://github.com/TestSprite/testsprite-cli/issues/672"}
+{"ts":"2026-11-10T02:56:25.053Z","type":"closed","issue":515,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/515"}
+{"ts":"2026-11-10T02:56:25.053Z","type":"closed","issue":654,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/654"}
+{"ts":"2026-11-10T02:56:25.053Z","type":"closed","issue":551,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/551"}
+{"ts":"2026-11-10T02:56:25.053Z","type":"closed","issue":550,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/550"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":667,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/667"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"unassigned","issue":376,"actor":"protonjls","assignee":"protonjls","url":"https://github.com/TestSprite/testsprite-cli/issues/376"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":708,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/708"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":688,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/688"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":692,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/692"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":369,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/369"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":687,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/687"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":606,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/606"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":373,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/373"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":432,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/432"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":387,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/387"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":533,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/533"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":482,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/482"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":502,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/502"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":404,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/404"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":377,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/377"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":467,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/467"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":396,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/396"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":419,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/419"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":537,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/537"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":527,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/527"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":464,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/464"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":508,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/508"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":583,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/583"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":614,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/614"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":470,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/470"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":100,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/100"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":536,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/536"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"unassigned","issue":100,"actor":"OkeyAmy","assignee":"OkeyAmy","url":"https://github.com/TestSprite/testsprite-cli/issues/100"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":484,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/484"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":489,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/489"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":398,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/398"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":481,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/481"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":490,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/490"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":645,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/645"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":642,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/642"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":478,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/478"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":164,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/164"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":125,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/125"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":498,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/498"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":431,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/431"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"unassigned","issue":672,"actor":"Yazan-O","assignee":"Yazan-O","url":"https://github.com/TestSprite/testsprite-cli/issues/672"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"unassigned","issue":673,"actor":"Yazan-O","assignee":"Yazan-O","url":"https://github.com/TestSprite/testsprite-cli/issues/673"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"assigned","issue":654,"actor":"naufalfx805-source","assignee":"naufalfx805-source","url":"https://github.com/TestSprite/testsprite-cli/issues/654"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"unassigned","issue":654,"actor":"zhengqiuyang","assignee":"zhengqiuyang","url":"https://github.com/TestSprite/testsprite-cli/issues/654"}
+{"ts":"2026-11-10T02:56:25.054Z","type":"closed","issue":726,"actor":"zeshi-du","url":"https://github.com/TestSprite/testsprite-cli/issues/726"}
+{"ts":"2026-11-10T02:56:26.603Z","type":"contested_skip","issue":672,"detail":"@mdshzb04 already has open PR #602 and can still claim","url":"https://github.com/TestSprite/testsprite-cli/issues/672"}
+{"ts":"2026-11-10T02:56:27.994Z","type":"claim_posted","issue":376,"detail":"[Hackathon] fix(test): flags documented \"with --history / --run / --all\" are silently ignored without that flag (their s…","url":"https://github.com/TestSprite/testsprite-cli/issues/376"}
+{"ts":"2026-11-10T02:56:29.107Z","type":"claim_posted","issue":673,"detail":"[Hackathon] fix(http): a proxy variable without a scheme (HTTPS_PROXY=proxy.corp:3128) is ignored, and every command the…","url":"https://github.com/TestSprite/testsprite-cli/issues/673"}
