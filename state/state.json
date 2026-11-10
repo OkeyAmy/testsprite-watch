@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-11-10T18:14:49.578Z",
+  "lastRun": "2026-11-10T23:24:22.270Z",
   "attempts": {
     "100": {
       "first": "2026-10-18T19:53:36.315Z",
@@ -301,7 +301,8 @@
     "lidxgoesgiri": false,
     "RK-625": false,
     "zhengqiuyang": false,
-    "dianchechihan": false
+    "dianchechihan": false,
+    "farhank15": false
   },
   "knownTargetKind": {
     "100": "issue",
@@ -654,6 +655,10 @@
     "730": "pr"
   },
   "contested": {
+    "186": {
+      "checkedAt": "2026-11-10T23:24:25.886Z",
+      "rivals": []
+    },
     "376": {
       "checkedAt": "2026-11-10T02:56:27.071Z",
       "rivals": []
@@ -780,11 +785,12 @@
       "count": 3
     },
     "mdshzb04": {
-      "checkedAt": "2026-11-10T18:14:52.643Z",
+      "checkedAt": "2026-11-10T23:24:25.119Z",
       "count": 1
     }
   },
   "approvalTimes": {
+    "186": "2026-08-13T09:22:10.000Z",
     "376": "2026-10-20T02:37:33.000Z",
     "404": "2026-10-20T21:04:51.000Z",
     "569": "2026-10-31T00:09:04Z",
